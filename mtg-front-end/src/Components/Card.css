@@ -1,13 +1,45 @@
-.card--details{
+.card--price_quantity{
+    margin-left:5px;
     display:flex;
     flex-direction: Row;
     align-items: center;
-    background-color: aquamarine;
+    background-color: rgb(40,42,53,0.3);
     width: 400px;
     justify-content:space-around;
+    filter:drop-shadow(5px 5px 10px black);
 }
 
 .card--img{
     height: 600px;
     width: 400px;
+}
+
+.card--info{
+    display:flex;
+    flex-direction: row;
+    padding: 5px;
+}
+.card--details{
+    display:flex;
+    flex-direction:column;
+    margin-left: 5px;
+    background-color: rgb(40,42,53, 0.3);
+    height:600px;
+    width:250px;
+    filter:drop-shadow(5px 5px 10px black);
+}
+
+.card--title{
+    align-self: center;
+}
+
+.card--sets{
+    display: flex;
+    border-style: solid;
+    border-width: thin;
+}
+
+.set--header{
+    justify-self: center;
+    align-self: center;
 }
