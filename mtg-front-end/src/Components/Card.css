@@ -1,0 +1,13 @@
+.card--details{
+    display:flex;
+    flex-direction: Row;
+    align-items: center;
+    background-color: aquamarine;
+    width: 400px;
+    justify-content:space-around;
+}
+
+.card--img{
+    height: 600px;
+    width: 400px;
+}
