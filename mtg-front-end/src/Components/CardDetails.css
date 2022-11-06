@@ -1,0 +1,19 @@
+.card--details{
+    border-radius: 15px;
+    display:flex;
+    flex-direction:column;
+    margin-left: 5px;
+    background-color: rgb(40,42,53, 0.3);
+    height:600px;
+    width:250px;
+    filter:drop-shadow(5px 5px 10px black);
+}
+
+.card--title{
+    align-self: center;
+}
+
+.card--sets{
+    display: flex;
+    justify-content: center;
+}
