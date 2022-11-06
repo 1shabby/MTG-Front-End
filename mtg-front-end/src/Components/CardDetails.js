@@ -1,13 +1,13 @@
 
 import "./CardDetails.css"
 
-export default function CardDetails(){
+export default function CardDetails(props){
     return(
         <div className="card--details">
-            <h4 className="card--title">Card Name</h4>
+            <h4 className="card--title">{props.name}</h4>
             <div className="card--sets">                    
                 <h4 className="set--header">Sets</h4>
-                <p></p>    
+                <p className="set--name"></p>    
             </div>
         </div>
     )

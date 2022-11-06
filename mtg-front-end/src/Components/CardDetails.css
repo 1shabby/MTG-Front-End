@@ -16,4 +16,13 @@
 .card--sets{
     display: flex;
     justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+.set--header{
+    align-self: center;
+}
+
+.set--name{
+    margin-left: 10px;
 }

@@ -3,16 +3,17 @@ import CardDetails from "./CardDetails"
 
 //The image source will be pulled from the api request
 //Price and quantity will be pulled from the database
-export default function Card(){
+export default function Card(props){
+    console.log(props.image)
     return(
         <div>
             <div className="card--info">
-                <img className="card--img" src="https://backs.scryfall.io/large/4/0/407ed11d-7b6f-4e1c-ab00-f49c25f170e3.jpg?1665006169"></img>
-                    <CardDetails />
+                <img className="card--img" src={props.image}></img>
+                    <CardDetails name={props.name}/>
                 </div>
                 <div className="card--price_quantity">
-                    <p>Price: Null</p>
-                    <p>Quantity: Null</p>    
+                    <p>Price: {props.price}</p>
+                    <p>Quantity: {props.quantity}</p>    
             </div>
         </div>
     )
