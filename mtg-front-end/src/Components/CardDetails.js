@@ -9,6 +9,10 @@ export default function CardDetails(props){
                 <h4 className="set--header">Sets</h4>
                 <p className="set--name"></p>    
             </div>
+            <div className="price_quantity">
+                <span>price: {props.price}</span>
+                <span>Quantity: {props.quantity}</span>
+            </div>
         </div>
     )
 }

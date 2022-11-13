@@ -18,6 +18,7 @@
     justify-content: center;
     align-content: center;
     flex-direction: column;
+    margin-bottom: 400px;
 }
 .set--header{
     align-self: center;
@@ -25,4 +26,14 @@
 
 .set--name{
     margin-left: 10px;
+}
+
+.price_quantity{
+    justify-self: flex-end;
+    display: flex;
+    justify-content: space-around;
+}
+
+span{
+    font-weight: bold;
 }

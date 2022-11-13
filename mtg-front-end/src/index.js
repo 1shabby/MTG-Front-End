@@ -21,15 +21,15 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <div>
-      <Card price={cardObj.price}
+      <Card className="card1" price={cardObj.price}
             quantity={cardObj.quantity} 
             image={cardObj.image}
             name={cardObj.name}/>
-      <Card price={cardObj.price}
+      <Card className="card2" price={cardObj.price}
             quantity={cardObj.quantity} 
             image={cardObj.image}
             name={cardObj.name}/>
-      <Card price={cardObj.price}
+      <Card className="card3" price={cardObj.price}
             quantity={cardObj.quantity} 
             image={cardObj.image}
             name={cardObj.name}/>
