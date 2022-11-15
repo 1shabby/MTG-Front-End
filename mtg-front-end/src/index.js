@@ -25,14 +25,6 @@ root.render(
             quantity={cardObj.quantity} 
             image={cardObj.image}
             name={cardObj.name}/>
-      <Card className="card2" price={cardObj.price}
-            quantity={cardObj.quantity} 
-            image={cardObj.image}
-            name={cardObj.name}/>
-      <Card className="card3" price={cardObj.price}
-            quantity={cardObj.quantity} 
-            image={cardObj.image}
-            name={cardObj.name}/>
     </div>       
   </React.StrictMode>,
 );

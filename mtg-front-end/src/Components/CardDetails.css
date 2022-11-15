@@ -29,6 +29,7 @@
 }
 
 .price_quantity{
+    flex-direction: row;
     justify-self: flex-end;
     display: flex;
     justify-content: space-around;
