@@ -21,6 +21,29 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <div>
+      <navbar className="nav">
+        <ul>
+          <li>Button 1</li>
+          <li>Button 2</li>
+          <li>Button 3</li>
+        </ul>
+      </navbar>
+      <Card className="card1" price={cardObj.price}
+            quantity={cardObj.quantity} 
+            image={cardObj.image}
+            name={cardObj.name}/>
+      <Card className="card1" price={cardObj.price}
+            quantity={cardObj.quantity} 
+            image={cardObj.image}
+            name={cardObj.name}/>
+      <Card className="card1" price={cardObj.price}
+            quantity={cardObj.quantity} 
+            image={cardObj.image}
+            name={cardObj.name}/>
+      <Card className="card1" price={cardObj.price}
+            quantity={cardObj.quantity} 
+            image={cardObj.image}
+            name={cardObj.name}/>
       <Card className="card1" price={cardObj.price}
             quantity={cardObj.quantity} 
             image={cardObj.image}
