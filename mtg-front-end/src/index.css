@@ -12,32 +12,3 @@ code {
     monospace;
 }
 
-div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  margin-top: 20px;
-  background-color: black;
-}
-
-ul{
-  list-style-type: none;
-  background-color: green;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  display: flex;
-  align-content:center;
-  justify-content: flex-end;
-  margin-top: 0;
-
-}
-
-li{
-  display:flex;
-  align-items: center;
-  justify-items: space-between;
-  border-left: 1px solid #bbb;
-  height:100%;
-}
