@@ -15,7 +15,7 @@ export default function Card(props){
             <div className="card--info">
                 <img className="card--img" src={props.image}></img>
                 {isShown && (
-                    <CardDetails name={props.name} price={props.price} quantity={props.quantity}/>
+                    <CardDetails name={props.name} price={props.price} quantity={props.quantity} sets={props.sets}/>
                 )}
                 
             </div>
