@@ -14,13 +14,13 @@ export default function App(){
 
     return (
         <div>
-            <navbar className="nav">
+            <nav className="nav">
                 <ul>
                 <li>Button 1</li>
                 <li>Button 2</li>
                 <li>Button 3</li>
                 </ul>
-            </navbar>
+            </nav>
         <section className="cards">
             {cards}
         </section>
