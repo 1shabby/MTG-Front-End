@@ -13,8 +13,14 @@ export default function Card(props){
     return(
         <div>
             <div className="card--info">
-                {props.version[0].extra != "NONE" && <img className="card--img" src={foil}></img>}
-                <img className="card--foil" src={props.version[0].frontImage}></img>
+            <div className='card--foil--container'>
+                    {props.version[0].extra != 'NONE' && (
+                        <img className='card--foil' src={foil}></img>
+                    )}
+                    <img
+                        className='card--img'
+                        src={props.version[0].frontImage}></img>
+                </div>
                 {isShown && (
                     <CardDetails name={props.name} version={props.version}/>
                 )}
