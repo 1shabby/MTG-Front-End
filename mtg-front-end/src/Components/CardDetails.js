@@ -3,14 +3,9 @@ import "./CardDetails.css"
 
 export default function CardDetails(props){
     console.log(props);
-    let sets = "Sets:\n"
+    let sets = []
     for(let i=0;i <props.version.length; i++){
-        if(i==0){
-            sets = sets + props.version[i].set
-        }
-        else{
-            sets = sets + ", " + props.version[i].set;
-        }
+            sets.push(<button>{props.version[i].set}</button>) 
     }
     return(
         <div className="card--details">

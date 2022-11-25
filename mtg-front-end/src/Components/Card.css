@@ -21,3 +21,8 @@
     display: block;
     border-radius: 15px;
 }
+.card--buttons{
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+}
