@@ -3,7 +3,6 @@ import CardDetails from "./CardDetails"
 import {useState} from 'react';
 
 export default function Card(props){
-
     const [isShown, setIsShown] = useState(false);
 
     const handleClick = event =>{
@@ -13,9 +12,9 @@ export default function Card(props){
     return(
         <div>
             <div className="card--info">
-                <img className="card--img" src={props.image}></img>
+                <img className="card--img" src={props.version[0].image}></img>
                 {isShown && (
-                    <CardDetails name={props.name} price={props.price} quantity={props.quantity} sets={props.sets}/>
+                    <CardDetails name={props.name} version={props.version}/>
                 )}
                 
             </div>
