@@ -2,6 +2,7 @@ import "./Card.css"
 import {useState} from 'react';
 import foil from "../Images/foil_overlay.png"
 import {motion} from "framer-motion"
+import { GrUpdate } from 'react-icons/gr';
 
 export default function Card(props){
     const [isShown, setIsShown] = useState(false);
@@ -43,12 +44,10 @@ export default function Card(props){
                 drag
                 whileHover={{scale:1.1}}>
                 <div className='card--foil--container' >
-                        {props.version[index].extra != 'NONE' && (
-                            <img className='card--foil' src={foil}></img>
-                        )}
-                        <img
-                            className='card--img'
-                            src={side == "front" ? props.version[index].frontImage : props.version[index].backImage} ></img>
+                        {props.version[index].extra != 'NONE' && (<img className='card--foil' src={foil}></img>)}
+                        {props.version[index].backImage != "" && <motion.button className="card--flip" onClick={flip} initial= {{rotate: 0,}} whileHover={{rotate:160}}><GrUpdate/></motion.button>}
+                        <button className="card--button" onClick={details}>{isShown == true ? "Show less" : "Show More"}</button>
+                        <img className='card--img'src={side == "front" ? props.version[index].frontImage : props.version[index].backImage} ></img>      
                 </div>
                 {isShown && (
                     <div className='card--details'>
@@ -61,14 +60,6 @@ export default function Card(props){
                         <div >{sets}</div> 
                     </div>
                 )}
-                <div className="card--buttons"
-                animate={{scale:1}}
-                initial={{scale:0}}
-                transition={{type: "tween", duration: 1}}
-                >
-                    <button className="card--button" onClick={details}>{isShown == true ? "Show less" : "Show More"}</button>
-                    {props.version[index].backImage != "" && <button className="card--flip" onClick={flip}>Flip Card</button>}
-                </div>
             </motion.div>
         </div>
     )
