@@ -10,19 +10,17 @@ export default function Card(props){
         setIsShown(current => !current);
     };
      
-    var [side,setSide] = useState(["front",props.version[0].frontImage]);
+    var [side,setSide] = useState("front");
 
     const flip = event =>{
         // console.log("state " + side[0])
         // console.log("Img " + side[1])
         setSide(function(side){
-            if(side[0] == "front"){
-                side[0] = "back";
-                side[1] = props.version[0].backImage
+            if(side == "front"){
+                side = "back";  
             }
-            else if(side[0] == "back"){
-                side[0] = "front";
-                side[1] = props.version[0].frontImage
+            else if(side == "back"){
+                side = "front";
             }
             console.log(side)
             return side
@@ -38,10 +36,10 @@ export default function Card(props){
                     )}
                     <img
                         className='card--img'
-                        src={side[1]}></img>
+                        src={side == "front" ? props.version[0].frontImage : props.version[0].backImage} ></img>
             </div>
             {isShown && (
-                <CardDetails name={side[0]} version={props.version}/>
+                <CardDetails key={props.name} version={props.version}/>
             )}
             <div className="card--buttons">
                 <button className="card--button" onClick={details}>Details</button>
