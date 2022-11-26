@@ -55,6 +55,7 @@ export default function Card(props){
                                 <p>Price: ${props.version[index].price}</p>
                                 <p>Quantity: {props.version[index].quantity}</p>
                             </div>
+                            <p>Sets:</p>
                             <div >{sets}</div> 
                         </div>
                 )}
