@@ -1,5 +1,4 @@
 import "./Card.css"
-import CardDetails from "./CardDetails"
 import {useState} from 'react';
 import foil from "../Images/foil_overlay.png"
 import {motion} from "framer-motion"
@@ -33,7 +32,7 @@ export default function Card(props){
 
     let sets = []
     for(let i=0;i <props.version.length; i++){
-        sets.push(<button onClick={() => {clickSet(i)}}>{props.version[i].set}</button>) 
+        sets.push(<motion.button whileHover={{scale:1.1}} onClick={() => {clickSet(i)}}>{props.version[i].set}</motion.button>) 
     }
     return(
         <div>
@@ -41,23 +40,18 @@ export default function Card(props){
                 animate={{scale:1}}
                 initial={{scale:0}} 
                 transition={{type: "tween", duration: .7}}
-                drag>
+                drag
+                whileHover={{scale:1.1}}>
                 <div className='card--foil--container' >
                         {props.version[index].extra != 'NONE' && (
                             <img className='card--foil' src={foil}></img>
                         )}
                         <img
                             className='card--img'
-                            animate={{scale:1}}
-                            initial={{scale:0}}
-                            transition={{type: "tween", duration: 1}}
                             src={side == "front" ? props.version[index].frontImage : props.version[index].backImage} ></img>
                 </div>
                 {isShown && (
-                    <motion.div 
-                    className='card--details' 
-                    animate={{y: -350}}
-                    transition={{type: "tween", duration: .5}}>
+                    <div className='card--details'>
                         <h3 className="card--name">{props.name}</h3>
                         <div className="card--price-quantity">
                             <p>Price: ${props.version[index].price}</p>
@@ -65,7 +59,7 @@ export default function Card(props){
                         
                         </div>
                         <div >{sets}</div> 
-                    </motion.div>
+                    </div>
                 )}
                 <div className="card--buttons"
                 animate={{scale:1}}
