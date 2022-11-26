@@ -7,14 +7,13 @@ import foil from "../Images/foil_overlay.png"
 export default function Card(props){
     const [isShown, setIsShown] = useState(false);
     const details = event =>{
-        setIsShown(current => !current);
+        setIsShown(state => !state);
+        console.log(state)
     };
      
     var [side,setSide] = useState("front");
 
     const flip = event =>{
-        // console.log("state " + side[0])
-        // console.log("Img " + side[1])
         setSide(function(side){
             if(side == "front"){
                 side = "back";  
@@ -39,10 +38,14 @@ export default function Card(props){
                         src={side == "front" ? props.version[0].frontImage : props.version[0].backImage} ></img>
             </div>
             {isShown && (
-                <CardDetails key={props.name} version={props.version}/>
+                <div className='card--details'>
+                    <h2>{props.version[0].name}</h2>
+                
+                {/* <CardDetails key={props.name} version={props.version}/> */}
+                </div>
             )}
             <div className="card--buttons">
-                <button className="card--button" onClick={details}>Details</button>
+                <button className="card--button" onClick={details}>{isShown == true ? "Show less" : "Show More"}</button>
                 {props.version[0].backImage != "" && <button className="card--flip" onClick={flip}>Flip Card</button>}
             </div>
             </div>
