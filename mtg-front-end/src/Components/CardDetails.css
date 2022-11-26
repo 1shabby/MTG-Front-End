@@ -1,4 +1,4 @@
-.card--details{
+/* .card--details{
     border-radius: 15px;
     display:flex;
     flex-direction:column;
@@ -6,7 +6,7 @@
     background-color: rgb(40,42,53, 0.3);
     width:100%;
     filter:drop-shadow(5px 5px 10px black);
-}
+} */
 
 .card--title{
     align-self: center;

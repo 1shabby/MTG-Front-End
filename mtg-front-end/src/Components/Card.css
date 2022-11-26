@@ -26,10 +26,20 @@
     height: 100%;
     display: block;
     border-radius: 15px;
-    background-color: aquamarine;
+    background: rgba(120, 120, 120, .8);
 }
 .card--buttons{
+    position: relative;
     display: flex;
     justify-content: space-around;
     padding: 5px;
+}
+.card--name{
+    display:flex;
+    justify-content: space-around;
+}
+.card--price-quantity{
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
 }

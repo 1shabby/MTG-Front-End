@@ -2,7 +2,7 @@ import "./Card.css"
 import CardDetails from "./CardDetails"
 import {useState} from 'react';
 import foil from "../Images/foil_overlay.png"
-
+import {motion} from "framer-motion"
 
 export default function Card(props){
     const [isShown, setIsShown] = useState(false);
@@ -19,16 +19,14 @@ export default function Card(props){
             else if(side == "back"){
                 side = "front";
             }
-            console.log(side)
+
             return side
         })
     }
     const [index, setIndex] = useState(0);
    
     const clickSet = (i) =>  {
-        // setIndex(props.version[])
         if(props.version.length > 1){
-            console.log(props.version[i].frontImage)
             setIndex(i)
         }
     }
@@ -39,27 +37,45 @@ export default function Card(props){
     }
     return(
         <div>
-            <div className="card--info">
-            <div className='card--foil--container'>
-                    {props.version[index].extra != 'NONE' && (
-                        <img className='card--foil' src={foil}></img>
-                    )}
-                    <img
-                        className='card--img'
-                        src={side == "front" ? props.version[index].frontImage : props.version[index].backImage} ></img>
-            </div>
-            {isShown && (
-                <div className='card--details'>
-                    <h2>{props.version[index].name}</h2>
-                    <div>{sets}</div>   
-                {/* <CardDetails key={props.name} version={props.version}/> */}
+            <motion.div className="card--info"
+                animate={{scale:1}}
+                initial={{scale:0}} 
+                transition={{type: "tween", duration: .7}}
+                drag>
+                <div className='card--foil--container' >
+                        {props.version[index].extra != 'NONE' && (
+                            <img className='card--foil' src={foil}></img>
+                        )}
+                        <img
+                            className='card--img'
+                            animate={{scale:1}}
+                            initial={{scale:0}}
+                            transition={{type: "tween", duration: 1}}
+                            src={side == "front" ? props.version[index].frontImage : props.version[index].backImage} ></img>
                 </div>
-            )}
-            <div className="card--buttons">
-                <button className="card--button" onClick={details}>{isShown == true ? "Show less" : "Show More"}</button>
-                {props.version[index].backImage != "" && <button className="card--flip" onClick={flip}>Flip Card</button>}
-            </div>
-            </div>
+                {isShown && (
+                    <motion.div 
+                    className='card--details' 
+                    animate={{y: -350}}
+                    transition={{type: "tween", duration: .5}}>
+                        <h3 className="card--name">{props.name}</h3>
+                        <div className="card--price-quantity">
+                            <p>Price: ${props.version[index].price}</p>
+                            <p>Quantity: {props.version[index].quantity}</p>
+                        
+                        </div>
+                        <div >{sets}</div> 
+                    </motion.div>
+                )}
+                <div className="card--buttons"
+                animate={{scale:1}}
+                initial={{scale:0}}
+                transition={{type: "tween", duration: 1}}
+                >
+                    <button className="card--button" onClick={details}>{isShown == true ? "Show less" : "Show More"}</button>
+                    {props.version[index].backImage != "" && <button className="card--flip" onClick={flip}>Flip Card</button>}
+                </div>
+            </motion.div>
         </div>
     )
 }
