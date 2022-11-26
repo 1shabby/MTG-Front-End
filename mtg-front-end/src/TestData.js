@@ -43,7 +43,7 @@ export default [{
         },
         {
             index: 1,
-            frontImg: "https://cards.scryfall.io/large/front/4/3/43d28c05-0ba1-4afa-a784-b71741375507.jpg?1669101584",
+            frontImage: "https://cards.scryfall.io/large/front/4/3/43d28c05-0ba1-4afa-a784-b71741375507.jpg?1669101584",
             backImage: "",
             price: 0.50,
             quantity: 1,
