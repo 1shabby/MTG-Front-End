@@ -5,11 +5,6 @@ import {motion} from "framer-motion"
 import { GrUpdate } from 'react-icons/gr';
 
 export default function Card(props){
-    const [isShown, setIsShown] = useState(false);
-    const details = event =>{
-        setIsShown(state => !state);
-    };
-     
     var [side,setSide] = useState("front");
     const flip = event =>{
         setSide(function(side){
@@ -24,11 +19,18 @@ export default function Card(props){
         })
     }
     const [index, setIndex] = useState(0);
-   
     const clickSet = (i) =>  {
         if(props.version.length > 1){
             setIndex(i)
         }
+    }
+
+    const [hover,setHover] = useState(false);
+    const handleMouseEnter = () => {
+        setHover(true);
+    }
+    const handleMouseLeave = () => {
+        setHover(false);
     }
 
     let sets = []
@@ -43,23 +45,21 @@ export default function Card(props){
                 transition={{type: "tween", duration: .7}}
                 drag
                 whileHover={{scale:1.1}}>
-                <div className='card--foil--container' >
+                <div className='card--foil--container' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >
                         {props.version[index].extra != 'NONE' && (<img className='card--foil' src={foil}></img>)}
                         {props.version[index].backImage != "" && <motion.button className="card--flip" onClick={flip} initial= {{rotate: 0,}} whileHover={{rotate:160}}><GrUpdate/></motion.button>}
-                        <button className="card--button" onClick={details}>{isShown == true ? "Show less" : "Show More"}</button>
+                        {hover && (
+                            <div className='card--details'>
+                            <h3 className="card--name">{props.name}</h3>
+                            <div className="card--price-quantity">
+                                <p>Price: ${props.version[index].price}</p>
+                                <p>Quantity: {props.version[index].quantity}</p>
+                            </div>
+                            <div >{sets}</div> 
+                        </div>
+                )}
                         <img className='card--img'src={side == "front" ? props.version[index].frontImage : props.version[index].backImage} ></img>      
                 </div>
-                {isShown && (
-                    <div className='card--details'>
-                        <h3 className="card--name">{props.name}</h3>
-                        <div className="card--price-quantity">
-                            <p>Price: ${props.version[index].price}</p>
-                            <p>Quantity: {props.version[index].quantity}</p>
-                        
-                        </div>
-                        <div >{sets}</div> 
-                    </div>
-                )}
             </motion.div>
         </div>
     )
