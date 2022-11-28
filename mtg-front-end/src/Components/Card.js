@@ -68,7 +68,7 @@ export default function Card(props){
                 // ref={ref}
                 animate={animation}
                 // initial={{scale:0}} 
-                transition={{type: "tween", duration: .7}}
+                transition={{type: "tween", duration: .5}}
                 whileHover={{scale:1.1}}>
                 <div className='card--foil--container' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >
                         {props.version[index].extra != 'NONE' && (<img className='card--foil' src={foil}></img>)}
