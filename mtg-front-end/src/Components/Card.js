@@ -57,7 +57,7 @@ export default function Card(props){
         else if(!isInView){
             animation.start({
                 scale:0,
-                y:'100vw'
+                y:'20vw'
             })
         }
     }, [isInView])
