@@ -1,10 +1,12 @@
 import "./Card.css"
 import {useState} from 'react';
 import foil from "../Images/foil_overlay.png"
-import {motion} from "framer-motion"
-import { GrUpdate } from 'react-icons/gr';
+import {motion,useAnimation,useInView} from "framer-motion"
+import { useEffect, useRef } from "react"
+import { GrUpdate } from 'react-icons/gr'
 
 export default function Card(props){
+    
     var [side,setSide] = useState("front");
     const flip = event =>{
         setSide(function(side){
@@ -14,7 +16,6 @@ export default function Card(props){
             else if(side == "back"){
                 side = "front";
             }
-
             return side
         })
     }
@@ -37,13 +38,37 @@ export default function Card(props){
     for(let i=0;i <props.version.length; i++){
         sets.push(<motion.button whileHover={{scale:1.1}} onClick={() => {clickSet(i)}}>{props.version[i].set}</motion.button>) 
     }
+
+    const ref = useRef(null);
+    const isInView = useInView(ref);
+    const animation = useAnimation();
+
+    useEffect(() => {
+        console.log(isInView)
+        if(isInView){
+            animation.start({
+                scale:1,
+                y: 0,
+                transition: {
+                    type: "tween", duration: .2
+                }
+            })
+        }
+        else if(!isInView){
+            animation.start({
+                scale:0,
+                y:'100vw'
+            })
+        }
+    }, [isInView])
+
     return(
-        <div>
+        <div ref={ref}>
             <motion.div className="card--info"
-                animate={{scale:1}}
-                initial={{scale:0}} 
+                // ref={ref}
+                animate={animation}
+                // initial={{scale:0}} 
                 transition={{type: "tween", duration: .7}}
-                drag
                 whileHover={{scale:1.1}}>
                 <div className='card--foil--container' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >
                         {props.version[index].extra != 'NONE' && (<img className='card--foil' src={foil}></img>)}
