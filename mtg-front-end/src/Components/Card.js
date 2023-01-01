@@ -50,7 +50,7 @@ export default function Card(props){
                 scale:1,
                 y: 0,
                 transition: {
-                    type: "tween", duration: .2
+                    type: "tween", duration: .4
                 }
             })
         }
