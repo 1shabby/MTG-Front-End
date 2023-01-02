@@ -22,7 +22,6 @@
     border-radius: 15px;
 }
 .card--flip{
-    display: flex;
     align-items: center;
     justify-items: center;
     position: absolute;
