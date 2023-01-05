@@ -1,6 +1,9 @@
+  nav {
+    background: rgb(0, 110, 255);
+  }
+
   ul{
     list-style-type: none;
-    background-color: green;
     position:sticky;
     top: 0;
     left: 0;
@@ -21,7 +24,12 @@
     height:100%;
   }
 
+  button{
+    width:75px;
+    height:inherit;
+    background: grey;
+  }
+
   .cards{
     background-color: white;
-
   }

@@ -16,9 +16,9 @@ export default function App(){
         <div>
             <nav className="nav">
                 <ul>
-                <li>Button 1</li>
-                <li>Button 2</li>
-                <li>Button 3</li>
+                <li><button>Library</button></li>
+                <li><button>Stats</button></li>
+                <li><button>Add Cards</button></li>
                 </ul>
             </nav>
         <section className="cards">
