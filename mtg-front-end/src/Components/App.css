@@ -24,10 +24,14 @@
     height:100%;
   }
 
-  button{
+  li > button{
+    
     width:75px;
     height:inherit;
     background: grey;
+  }
+  li > button :hover{
+    background-color: orange;
   }
 
   .cards{
