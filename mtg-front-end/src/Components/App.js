@@ -21,9 +21,9 @@ export default function App(){
                 <li><button>Add Cards</button></li>
                 </ul>
             </nav>
-        <section className="cards">
-            {cards}
-        </section>
+            <section className="cards">
+                {cards}
+            </section>
         </div> 
       )
 
