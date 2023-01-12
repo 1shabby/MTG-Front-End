@@ -29,6 +29,8 @@
     width:75px;
     height:inherit;
     background: grey;
+    border:none;
+    border-radius: 5px;
   }
   li > button:hover{
     background-color: orange;
