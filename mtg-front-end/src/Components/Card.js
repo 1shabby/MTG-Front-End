@@ -36,7 +36,7 @@ export default function Card(props){
 
     let sets = []
     for(let i=0;i <props.version.length; i++){
-        sets.push(<motion.button whileHover={{scale:1.1}} onClick={() => {clickSet(i)}}>{props.version[i].set}</motion.button>) 
+        sets.push(<motion.button className="set-button" whileHover={{scale:1.1}} onClick={() => {clickSet(i)}}>{props.version[i].set}</motion.button>) 
     }
 
     const ref = useRef(null);
