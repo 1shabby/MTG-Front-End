@@ -1,7 +1,7 @@
 import './App.css';
 import Card from './Card';
 import Data from '../TestData';
-import logo from "../Images/Magic-The-Gathering-logo.png"
+import logo from "../Images/Magic-The-Gathering-logo.png";
 
 export default function App(){
     const cards = Data.map(card =>{
