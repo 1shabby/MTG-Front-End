@@ -17,7 +17,7 @@ export default function App(){
         <div>
             <nav className="nav">
                 <ul>
-                <li><img source={logo}></img></li>
+                {/* <li><img source={logo}></img></li> */}
                 <li><button>Library</button></li>
                 <li><button>Stats</button></li>
                 <li><button>Add Cards</button></li>
