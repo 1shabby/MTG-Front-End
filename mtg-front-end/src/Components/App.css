@@ -33,7 +33,7 @@
     border-radius: 5px;
   }
   li > button:hover{
-    background-color: green;
+    background-color:blue;
   }
 
   .cards{
